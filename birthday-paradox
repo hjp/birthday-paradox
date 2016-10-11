@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+use v5.20;
+use warnings;
+
+my $n = $ARGV[0] // 365;
+
+my $p = 1;
+for my $i (2 .. $n) {
+    my $still_free = $n - ($i - 1);
+    $p = $p * ($still_free / $n);
+    say "$i $p";
+}
